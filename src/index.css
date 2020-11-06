@@ -1,1 +1,121 @@
+body{
+    background-image: url("resources/images/background.jpg");
+    background-size: cover;
+}
 
+#main-navbar{
+    background-color: white;
+    margin-top: 2vw;
+    border-radius: 40px;
+    color: #490563 !important;
+}
+
+.dark-jumbotron{
+    background-color: #490563 !important;
+    color: white !important;
+    border-radius: 40px !important;
+    text-align: center;
+    height: 100%;
+}
+
+.light-jumbotron{
+    background-color: white !important;
+    color: #490563 !important;
+    border-radius: 40px !important;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.submit-button{
+    border-radius: 15px !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+.submit-button:hover{
+    background-color: white !important;
+    color: #490563 !important;
+}
+
+.nav-button{
+    color: #490563 !important;
+    border-radius: 15px;
+    margin-right: 4vw;
+    transition: 0.4s;
+    font-size: larger;
+}
+
+.nav-button:hover{
+    background-color: #490563 !important;
+    color: white !important;
+    border-radius: 15px;
+}
+
+.main-container{
+    margin-top: 2vw;
+}
+
+.left-shift{
+    text-align: left;
+}
+
+.right-shift{
+    text-align : right
+}
+
+.edit-button{
+    margin-left: 5%;
+    color: #490563 !important;
+    border-color: #490563 !important;
+}
+
+.modal-button{
+    color: #490563 !important;
+    border-color: #490563 !important;
+}
+
+.modal-button:hover{
+    background-color: #490563 !important;
+    color : white !important;
+}
+
+.edit-button:hover{
+    color: white !important;
+    background-color: #490563 !important;
+}
+
+.editable-field{
+    color : #490563 !important;
+    border-color: #490563 !important;
+    background-color : white !important;
+}
+
+.editable-field:disabled{
+    background-color : white !important;
+}
+
+.editable-field-text{
+    background-color: #490563 !important;
+    color: white !important;
+    border-color: #490563 !important;
+    margin-right: 5% !important;
+}
+
+.information-modal{
+    color : #490563;
+}
+
+.input-group{
+    margin-top: 2%;
+}
+
+#footer{
+    color: #490563;
+    text-align: center;
+    margin-top: 8vh;
+}
+
+.small-logo{
+    width: 15vw;
+}
