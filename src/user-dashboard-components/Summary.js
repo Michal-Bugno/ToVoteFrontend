@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import axios from 'axios'
 
-import API_ADDRESS from './constants';
+import API_ADDRESS from '../constants';
 
 class Summary extends React.Component{
 
@@ -28,9 +28,9 @@ class Summary extends React.Component{
     render(){
         return(
             <div>
-                <Jumbotron className="dark-jumbotron">
-                    <h1>Notifications</h1>
-                    wkfhakjhjkfah
+                <Jumbotron className="dark-jumbotron  small-field-div light-scrollbar">
+                    <h1>This is your profile</h1>
+                    You can edit it using <em>Edit</em> buttons
                 </Jumbotron>
             </div>
         )

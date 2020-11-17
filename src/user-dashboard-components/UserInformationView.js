@@ -1,11 +1,11 @@
 import React from 'react'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import axios from 'axios'
-import API_ADDRESS from './constants'
+import API_ADDRESS from '../constants'
 
-import EditableField from './EditableField';
+import EditableField from '../EditableField';
 import Container from 'react-bootstrap/esm/Container'
-import InformationModal from './InformationModal'
+import InformationModal from '../InformationModal'
 
 class UserInformationView extends React.Component{
 
@@ -88,7 +88,6 @@ class UserInformationView extends React.Component{
             } , {headers : {Authorization : window.sessionStorage.authToken}});
 
             this.handleShow();
-            console.log(response);
         }
         catch(error){
             if(error.response)
@@ -125,7 +124,7 @@ class UserInformationView extends React.Component{
     render(){
         return(
             <div>
-                <Jumbotron className="light-jumbotron h-100">
+                <Jumbotron className="light-jumbotron small-field-div light-scrollbar">
                     <h1>User {this.props.username}</h1>
                             E-mail: {this.state.email}
                     <Container>
@@ -135,7 +134,6 @@ class UserInformationView extends React.Component{
                     </Container>
                     
                 </Jumbotron>
-
                 <InformationModal header="Data saved!" body="Your profile has been updated!" show={this.state.showSaveModal} handleClose={this.handleClose}/>
             </div>
         )

@@ -9,12 +9,14 @@ import LoginForm from './login-register-components/LoginForm'
 import LoginRegisterNavbar from './login-register-components/LoginRegisterNavbar'
 import Footer from './Footer'
 import Greeting from './login-register-components/Greeting'
-import Summary from './Summary'
+import Summary from './user-dashboard-components/Summary'
 
 import appStates from './AppStateEnum'
-import UserInformationView from './UserInformationView'
+import UserInformationView from './user-dashboard-components/UserInformationView'
 import RegisterForm from './login-register-components/RegisterForm'
 import AppNavbar from './AppNavbar'
+import GroupsView from './groups-dashboard-components/GroupsView'
+import GroupDetailsView from './groups-dashboard-components/GroupDetailsView'
 
 class App extends Component {
 
@@ -29,6 +31,9 @@ class App extends Component {
   }
 
   changeAppState(state, data){
+    var username = this.state.stateData.username; //To make sure, that username is defined
+    if(!data.username)
+      data.username = username;
     this.setState({
       appState : state,
       stateData : data
@@ -72,7 +77,7 @@ class App extends Component {
                     case appStates.VOTINGS:
                       return null; //TODO
                     case appStates.GROUPS:
-                      return null; //TODO
+                      return <GroupsView changeState={this.changeAppState.bind(this, appStates.GROUPS)}/>
                     case appStates.HELP:
                         return null; //TODO
                   }
@@ -92,7 +97,7 @@ class App extends Component {
                     case appStates.VOTINGS:
                       return null; //TODO
                     case appStates.GROUPS:
-                      return null; //TODO
+                      return <GroupDetailsView group = {this.state.stateData} username={this.state.stateData.username}/>
                     case appStates.HELP:
                         return null; //TODO
                   }

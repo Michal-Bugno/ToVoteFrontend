@@ -40,15 +40,17 @@ class RegisterForm extends React.Component{
         event.preventDefault();
         event.target.reset();
 
+        if(!this.state.password || !this.state.username || !this.state.email){
+            this.showError("You have to provide username, password and e-mail!");
+            return;
+        }
+
         if(this.state.password !== this.state.repeatedPassword){
             this.showError("Repeated password does not match the first one!");
             return;
         }
 
-        if(!this.state.password || !this.state.username || !this.state.email){
-            this.showError("You have to provide username, password and e-mail!");
-            return;
-        }
+        
 
         try{
             const response = await axios.post(API_ADDRESS+"/users", {
