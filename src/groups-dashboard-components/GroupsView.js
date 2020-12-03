@@ -71,7 +71,7 @@ class GroupsView extends React.Component{
         event.preventDefault();
 
         try{
-        const response = await axios.post(API_ADDRESS+"/groups", {
+            const response = await axios.post(API_ADDRESS+"/groups", {
             name : this.state.newGroupName,
             description : this.state.newGroupDescription
         }, {headers : {Authorization : window.sessionStorage.authToken}});
@@ -155,11 +155,12 @@ class GroupsView extends React.Component{
                 </div>
                 <Modal
                 show={this.state.showCreateModal}
+                onHide={this.handleClose}
                 backdrop="static"
                 keyboard={false}
                 className="information-modal"
                 >
-                <Modal.Header>
+                <Modal.Header closeButton>
                 <Modal.Title>Create group:</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>

@@ -130,6 +130,7 @@ class GroupDetailsView extends React.Component{
                 backdrop="static"
                 keyboard={false}
                 className="information-modal"
+                onHide={this.handleClose}
                 >
                 <Modal.Header>
                 <Modal.Title>Add user</Modal.Title>

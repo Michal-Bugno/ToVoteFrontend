@@ -17,6 +17,8 @@ import RegisterForm from './login-register-components/RegisterForm'
 import AppNavbar from './AppNavbar'
 import GroupsView from './groups-dashboard-components/GroupsView'
 import GroupDetailsView from './groups-dashboard-components/GroupDetailsView'
+import VotingsView from './voting-dashboard-components/VotingsView'
+import VotingDetailsView from './voting-dashboard-components/VotingDetailsView'
 
 class App extends Component {
 
@@ -75,7 +77,7 @@ class App extends Component {
                     case appStates.USER_DASHBOARD:
                       return <UserInformationView username = {this.state.stateData.username} />
                     case appStates.VOTINGS:
-                      return null; //TODO
+                      return <VotingsView changeState={this.changeAppState.bind(this, appStates.VOTINGS)}/>
                     case appStates.GROUPS:
                       return <GroupsView changeState={this.changeAppState.bind(this, appStates.GROUPS)}/>
                     case appStates.HELP:
@@ -95,7 +97,7 @@ class App extends Component {
                     case appStates.USER_DASHBOARD:
                       return <Summary username = {this.state.stateData.username} />
                     case appStates.VOTINGS:
-                      return null; //TODO
+                      return <VotingDetailsView voting = {this.state.stateData} username = {this.state.stateData.username}/>;
                     case appStates.GROUPS:
                       return <GroupDetailsView group = {this.state.stateData} username={this.state.stateData.username}/>
                     case appStates.HELP:
